@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.2.11408.102 d18.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiProjectTestIssue", "MultiProjectTestIssue\MultiProjectTestIssue.csproj", "{0C2C7425-4CCE-4716-B3BE-D5C136DF9903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{330ED376-29A3-4BF1-AAD9-E9C08073EE77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C2C7425-4CCE-4716-B3BE-D5C136DF9903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C2C7425-4CCE-4716-B3BE-D5C136DF9903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C2C7425-4CCE-4716-B3BE-D5C136DF9903}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{0C2C7425-4CCE-4716-B3BE-D5C136DF9903}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{0C2C7425-4CCE-4716-B3BE-D5C136DF9903}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{0C2C7425-4CCE-4716-B3BE-D5C136DF9903}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{330ED376-29A3-4BF1-AAD9-E9C08073EE77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{330ED376-29A3-4BF1-AAD9-E9C08073EE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{330ED376-29A3-4BF1-AAD9-E9C08073EE77}.ExportDebug|Any CPU.ActiveCfg = Release|Any CPU
+		{330ED376-29A3-4BF1-AAD9-E9C08073EE77}.ExportDebug|Any CPU.Build.0 = Release|Any CPU
+		{330ED376-29A3-4BF1-AAD9-E9C08073EE77}.ExportRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{330ED376-29A3-4BF1-AAD9-E9C08073EE77}.ExportRelease|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2ECB2388-7858-4217-A0AB-130D969C4529}
+	EndGlobalSection
+EndGlobal

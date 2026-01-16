@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwbwpsf87nhoh"]
+
+[ext_resource type="Script" uid="uid://guubu3v1peq" path="res://src/GameController.cs" id="1_bwfxu"]
+
+[node name="GameController" type="Node2D"]
+script = ExtResource("1_bwfxu")

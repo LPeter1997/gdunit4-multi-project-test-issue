@@ -1,0 +1,35 @@
+﻿<Project Sdk="Godot.NET.Sdk/4.5.1" InitialTargets="CreateSymlinks">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <RunSettingsFilePath>$(MSBuildProjectDirectory)\.runsettings</RunSettingsFilePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include=".runsettings" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageReference Include="gdUnit4.api" Version="5.1.0-rc1" />
+    <PackageReference Include="gdUnit4.test.adapter" Version="3.0.0" />
+    <PackageReference Include="gdUnit4.analyzers" Version="1.0.0">
+      <PrivateAssets>none</PrivateAssets>
+    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <Target Name="CreateSymlinks">
+    <PropertyGroup>
+      <SrcSource>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../MultiProjectTestIssue/src'))</SrcSource>
+      <SrcTarget>$(MSBuildProjectDirectory)/src</SrcTarget>
+    </PropertyGroup>
+    <Exec Command="if not exist &quot;$(SrcTarget)&quot; mklink /D &quot;$(SrcTarget)&quot; &quot;$(SrcSource)&quot;" Condition="'$(OS)' == 'Windows_NT'" ContinueOnError="true" />
+    <Exec Command="[ ! -L '$(SrcTarget)' ] &amp;&amp; ln -s '$(SrcSource)' '$(SrcTarget)' || true" Condition="'$(OS)' != 'Windows_NT'" ContinueOnError="true" />
+    <Error Condition="!Exists('$(SrcTarget)')" Text="Failed to create symlink at $(SrcTarget). On Windows, try running as Administrator or enabling Developer Mode." />
+    <Message Text="✓ Symlink verified: $(SrcTarget) -&gt; $(SrcSource)" Importance="high" />
+  </Target>
+
+</Project>
